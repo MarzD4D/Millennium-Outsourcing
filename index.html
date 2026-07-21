@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr Fran Finn — executive coach, leadership specialist and facilitator. Coaching and leadership development for senior leaders and organisations.">
+  <title>Dr Fran Finn | Executive Coach | Leadership Specialist | Facilitator</title>
+  <style>
+    :root {
+      --lavender: #d8cfe5;
+      --lavender-deep: #b8a9cc;
+      --ink: #1a1a1a;
+      --ink-soft: #3d3d3d;
+      --muted: #5c5c5c;
+      --mo-blue: #0074c8;
+      --bg: #faf9fc;
+      --white: #ffffff;
+      --border: #e8e4ee;
+      --max: 960px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--mo-blue);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--ink);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      z-index: 100;
+    }
+
+    .skip-link:focus { left: 1rem; top: 1rem; }
+
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .brand img { width: 220px; }
+
+    .hero {
+      background: linear-gradient(165deg, var(--white) 0%, #f3eff8 55%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3.5rem;
+    }
+
+    .hero-text { max-width: none; }
+
+    .hero-text h1 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(1.65rem, 3.4vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--ink);
+      margin: 0 0 1rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .hero-text .subtitle {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin: 0 0 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-text .lead {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      margin: 0;
+      max-width: 44rem;
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+
+    .section + .section { padding-top: 0; }
+
+    .section-title {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.625rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 0 0 1.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    /*
+     * PREVIOUS About layout (side-by-side columns — restore if preferred):
+     * .about-layout {
+     *   display: grid;
+     *   grid-template-columns: minmax(200px, 280px) 1fr;
+     *   gap: 2rem;
+     *   align-items: start;
+     *   background: var(--white);
+     *   border: 1px solid var(--border);
+     *   border-radius: 6px;
+     *   padding: 2rem;
+     * }
+     * .about-photo img { width: 100%; border-radius: 4px; object-fit: cover; }
+     * @media (max-width: 800px) {
+     *   .about-layout { grid-template-columns: 1fr; max-width: 28rem; }
+     *   .about-photo { max-width: 220px; }
+     * }
+     */
+    .about-layout {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+      overflow: auto;
+    }
+
+    .about-photo {
+      float: left;
+      width: min(220px, 30%);
+      margin: 0 1.5rem 0.75rem 0;
+    }
+
+    #about-heading {
+      margin-bottom: 2.5rem;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 19.5rem;
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .about-copy p {
+      margin: 0 0 1.15rem;
+    }
+
+    .about-copy p:last-of-type { margin-bottom: 0; }
+
+    .em { font-style: italic; }
+
+    .about-section {
+      padding-bottom: 0;
+    }
+
+    .credentials {
+      clear: both;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: var(--max);
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .credential strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .credential span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .cred-list {
+      display: grid;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cred-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--lavender-deep);
+      border-radius: 0 6px 6px 0;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .cred-item h3 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 0 0 0.4rem;
+    }
+
+    .cred-item p {
+      margin: 0;
+      font-size: 0.975rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .quote-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem;
+    }
+
+    .quote-block {
+      background: var(--lavender);
+      border-radius: 6px;
+      padding: 2.5rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    .quote-block blockquote {
+      margin: 0 auto;
+      max-width: 40rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .quote-block cite {
+      display: block;
+      margin-top: 1rem;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .sectors-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.5rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .sectors-panel > p {
+      margin: 0 0 1.75rem;
+      max-width: 44rem;
+      font-size: 0.975rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .sector {
+      margin: 0 0 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sector:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .sector h3,
+    .selected-orgs h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 0.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .sector p,
+    .selected-orgs {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.975rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .selected-orgs {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .connect-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem 2.5rem;
+    }
+
+    .connect-panel > p {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    .connect-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .connect-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .connect-links svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    .site-footer {
+      background: var(--ink);
+      color: #c8c8c8;
+      margin-top: 3.5rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 26rem;
+    }
+
+    .mo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .mo-lockup img {
+      width: 56px;
+      height: auto;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .mo-lockup span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.35;
+    }
+
+    .footer-brand p {
+      margin: 0;
+      line-height: 1.6;
+      color: #c8c8c8;
+    }
+
+    .footer-meta {
+      text-align: right;
+      line-height: 1.9;
+      color: var(--mo-blue);
+    }
+
+    .footer-meta a {
+      color: var(--mo-blue);
+    }
+
+    @media (max-width: 800px) {
+      .hero-inner { padding: 3rem 1.5rem; }
+      .hero-text h1 {
+        white-space: normal;
+        font-size: clamp(1.75rem, 6vw, 2.25rem);
+      }
+      .about-photo {
+        float: none;
+        width: min(200px, 100%);
+        margin: 0 0 1.25rem;
+      }
+      .about-photo img {
+        height: auto;
+        max-height: 16rem;
+      }
+      .credentials {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 1rem;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+      .footer-inner { flex-direction: column; }
+      .footer-meta { text-align: left; }
+    }
+
+    @media (max-width: 480px) {
+      .about-layout,
+      .sectors-panel,
+      .quote-block,
+      .connect-panel,
+      .cred-item { padding: 1.5rem; }
+
+      .hero-text .subtitle {
+        letter-spacing: 0.04em;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="finn-logo.jpg" alt="Dr Fran Finn" width="220" height="220">
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 id="hero-heading">Clarity for leaders at pivotal moments</h1>
+        <p class="subtitle">Executive Coach &nbsp;|&nbsp; Leadership Specialist &nbsp;|&nbsp; Facilitator</p>
+        <p class="lead">Dr Fran Finn partners with senior executives, leadership teams and organisations to strengthen leadership capability, navigate complexity and lead with confidence through transition and change. Through individual executive coaching, group coaching and facilitated leadership development programs, she helps leaders think clearly, make better decisions and create lasting impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <section class="section about-section" aria-labelledby="about-heading">
+      <h2 class="section-title" id="about-heading">About Dr Fran Finn</h2>
+      <div class="about-layout">
+        <div class="about-copy">
+          <div class="about-photo">
+            <img src="fran-photo.jpg" alt="Dr Fran Finn" width="640" height="753">
+          </div>
+          <p>With more than 30 years&rsquo; experience across leadership, executive coaching, human resources and adult learning, and a PhD examining the impact of executive coaching on leadership development, Dr Fran Finn brings a rare combination of research, executive education and practical experience to developing senior leaders, leadership teams and organisations.</p>
+          <p>Fran has held senior leadership roles in executive education, including Director, Leadership Coaching and Executive Programs at the QUT Graduate School of Business and QUTeX Executive Education. She established QUTeX&rsquo;s Leadership Coaching Practice, led the development of senior leadership coaches across Australia, coordinated the Executive Graduate Certificate in Business (Leadership Coaching), and partnered with organisations across a broad range of industries to design and facilitate leadership development programs.</p>
+          <p>Fran&rsquo;s approach bridges research and practice. She was awarded a PhD for her research, <span class="em">Leadership Development Through Executive Coaching: The Effects on Leaders&rsquo; Psychological States and Transformational Leadership Behaviour</span>, and has spent more than two decades applying those insights through executive coaching, leadership development and executive education. Her work supports leaders to think clearly, strengthen self-awareness, build confidence and communicate with greater impact, enabling healthy, sustainable leadership. Her research has been presented nationally and internationally, and she is regularly invited to contribute to professional and industry conversations on coaching and leadership.</p>
+          <p>Fran is recognised as a Fellow of the Association for Coaching, acknowledging her longstanding contribution to the coaching profession. She also serves on the Association for Coaching Queensland Leadership Team, supporting the ongoing development and professionalism of coaching.</p>
+          <p>Alongside her work in leadership development, Fran has extensive experience as an investor, managing residential and commercial property developments, securities and digital assets. This commercial perspective complements her coaching practice and provides practical insight into the strategic, financial and organisational realities faced by senior leaders and executive teams.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="credentials">
+      <div class="credential">
+        <strong>PhD</strong>
+        <span>Executive Coaching</span>
+      </div>
+      <div class="credential">
+        <strong>Fellow</strong>
+        <span>Association for Coaching</span>
+      </div>
+      <div class="credential">
+        <strong>30+ Years</strong>
+        <span>Leadership Development</span>
+      </div>
+    </div>
+
+    <div class="quote-wrap">
+      <div class="quote-block">
+        <blockquote>&ldquo;Great coaching creates a pause: a moment to step back from the pace of the role, gain clarity and lead with greater intention.&rdquo;</blockquote>
+        <cite>&mdash; Dr Fran Finn</cite>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="credentials-heading">
+      <h2 class="section-title" id="credentials-heading">Professional Credentials</h2>
+      <ul class="cred-list">
+        <li class="cred-item">
+          <h3>PhD &ndash; Executive Coaching</h3>
+          <p>Research examining the impact of executive coaching on leadership development, leaders&rsquo; psychological states and transformational leadership behaviour.</p>
+        </li>
+        <li class="cred-item">
+          <h3>Fellow &ndash; Association for Coaching</h3>
+          <p>Recognised for longstanding contribution, experience and service to the coaching profession.</p>
+        </li>
+        <li class="cred-item">
+          <h3>Leadership Assessment Practitioner</h3>
+          <p>Accredited in Leadership Circle Profile&reg;, Collective Leadership Assessment&trade;, Global Leadership Wellbeing Survey (GLWS), PROPHET Team Insight Report, TMS Linking Skills Profiles, Saville Wave&reg; and Myers-Briggs Type Indicator&reg; (MBTI).</p>
+        </li>
+        <li class="cred-item">
+          <h3>30+ Years&rsquo; Leadership Development Experience</h3>
+          <p>Executive coaching, leadership development, executive education and organisational capability across corporate, government, higher education and community sectors.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="sectors-heading">
+      <h2 class="section-title" id="sectors-heading">Experience Across Sectors</h2>
+      <div class="sectors-panel">
+        <p>Throughout her career, Fran has coached and developed leaders and leadership teams across organisations in the corporate, government, higher education and community sectors, supporting leadership capability, organisational change and executive development.</p>
+
+        <div class="sector">
+          <h3>Corporate</h3>
+          <p>Banking &amp; Financial Services &middot; Retail &middot; Professional Services &middot; Construction &amp; Infrastructure &middot; Manufacturing &middot; Logistics &amp; Transport &middot; Media</p>
+        </div>
+        <div class="sector">
+          <h3>Government</h3>
+          <p>Local, State &amp; Australian Government &middot; Statutory Authorities</p>
+        </div>
+        <div class="sector">
+          <h3>Higher Education</h3>
+          <p>Universities &middot; Executive Education</p>
+        </div>
+        <div class="sector">
+          <h3>Health, Community &amp; Not-for-Profit</h3>
+          <p>Health Care &middot; Aged Care &middot; Disability Services &middot; Community Services &middot; Faith-based Organisations</p>
+        </div>
+
+        <div class="selected-orgs">
+          <h3>Leaders from organisations including</h3>
+          <p>Bank of Queensland, Endeavour Foundation, KPMG, Laing O&rsquo;Rourke, McCullough Robertson, Mitsubishi, Public Sector Commission, Public Trustee, Queensland University of Technology, Suncorp, The University of Queensland, Toll, Tourism and Events Queensland, UnitingCare Queensland, University of Southern Queensland, Woolworths, and more than 20 local, state and Australian Government departments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="connect-heading">
+      <h2 class="section-title" id="connect-heading">Connect</h2>
+      <div class="connect-panel">
+        <p>Connect with Dr Fran Finn for a confidential conversation about how executive coaching and leadership development can support you, your leaders and your organisation.</p>
+        <ul class="connect-links">
+          <li>
+            <a href="mailto:fran@franfinn.com.au">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Connect with Fran
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/drfranfinn/" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              linkedin.com/in/drfranfinn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="mo-lockup">
+          <img src="mo-icon.jpg" alt="Millennium Outsourcing" width="257" height="245">
+          <span>Millennium<br>Outsourcing</span>
+        </div>
+        <p>Dr Fran Finn&rsquo;s coaching practice is delivered through Millennium Outsourcing, established in 2000 to provide executive coaching, leadership consulting, and leadership development services.</p>
+      </div>
+      <div class="footer-meta">
+        <p>
+          Millennium Outsourcing Pty Ltd<br>
+          <a href="mailto:fran@franfinn.com.au">Connect with Fran</a><br>
+          <a href="https://www.linkedin.com/in/drfranfinn/" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
